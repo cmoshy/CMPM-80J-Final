@@ -32,11 +32,8 @@ class Play extends Phaser.Scene {
         //world
         this.physics.world.setBounds(0,0, game.config.width, game.config.height)
 
-        //game over flag
-        this.gameOver = false
-
         //object
-        this.p1Tank = new Tank(this, game.config.width / 2, game.config.height - borderUISize - borderPadding, 'star-'+init.toString(), 0)
+        this.p1Tank = new Tank(this, game.config.width / 2, game.config.height/2 - borderUISize - borderPadding, 'star-'+init.toString(), 0)
 
         this.movingEmitter = this.add.particles(0, 0, 'star-'+init.toString() , {
             frequency: 15,
@@ -51,15 +48,14 @@ class Play extends Phaser.Scene {
 
         this.shapes = {
             arr: [],
-            count: 25,
-            real: 25
+            count: 40,
         }
 
         for(let x = 0; x < this.shapes.count; x ++){
            this.shapes.arr.push(new Projectile(this, Phaser.Math.Between(10, game.config.width - 10),  Phaser.Math.Between(10, game.config.height - 100), 'triangle-'+Phaser.Math.Between(1,6).toString(), 0, 25, 75).setGravity(Phaser.Math.Between(-10, 10), Phaser.Math.Between(-10, 10)))
         }
 
-        this.INTERVAL_ID = setInterval(()=>{
+        INTERVAL_ID = setInterval(()=>{
             let choice = Phaser.Math.Between(1,6)
             this.winShape = (this.collectTypes[choice]).toString()
             this.objectiveTxt.setText('Collect: ' + this.winShape)
@@ -76,59 +72,32 @@ class Play extends Phaser.Scene {
                 //maybe audio
             }
             object.destroy()
-            this.shapes.real -= 1
         })
 
         cursors.left.on('down', ()=>{
-            if(!this.gameOver){
-                this.p1Tank.setVelocity(-this.p1Tank.moveSpeed, 0)
-            }
+            this.p1Tank.setVelocity(-this.p1Tank.moveSpeed, 0)
         })
         cursors.right.on('down', ()=>{
-            if(!this.gameOver){
-                this.p1Tank.setVelocity(this.p1Tank.moveSpeed, 0)
-            }
+            this.p1Tank.setVelocity(this.p1Tank.moveSpeed, 0)
         })
         cursors.up.on('down', ()=>{
-            if(!this.gameOver){
-                this.p1Tank.setVelocity(0, -this.p1Tank.moveSpeed)
-            }
+            this.p1Tank.setVelocity(0, -this.p1Tank.moveSpeed) 
         })
         cursors.down.on('down', ()=>{
-            if(!this.gameOver){
-                this.p1Tank.setVelocity(0, this.p1Tank.moveSpeed)
-            }
+            this.p1Tank.setVelocity(0, this.p1Tank.moveSpeed) 
         })
         cursors.space.on('down', ()=>{
-            if(!this.gameOver){
-
-
-                
-                if(this.p1Tank.body.velocity.x > 0){
-                    this.p1Tank.body.velocity.x += 100
-                } else if(this.p1Tank.body.velocity.x < 0){
-                    this.p1Tank.body.velocity.x -= 100
-                }
-
-                
-                if(this.p1Tank.body.velocity.y > 0){
-                    this.p1Tank.body.velocity.y += 100
-                } else if(this.p1Tank.body.velocity.y < 0){
-                    this.p1Tank.body.velocity.y -= 100
-                } 
-                
-              
+            if(this.p1Tank.body.velocity.x > 0){
+                this.p1Tank.body.velocity.x += 100
+            } else if(this.p1Tank.body.velocity.x < 0){
+                this.p1Tank.body.velocity.x -= 100
             }
-        })
-
-        this.time.delayedCall(20000, ()=>{
-            this.add.tween({
-                targets: this.menuText,
-                alpha: {from: 0, to: 1},
-                delay: 1500,
-                duration: 2000,
-            })
-            this.gameOver = true   
+    
+            if(this.p1Tank.body.velocity.y > 0){
+                this.p1Tank.body.velocity.y += 100
+            } else if(this.p1Tank.body.velocity.y < 0){
+                this.p1Tank.body.velocity.y -= 100
+            }   
         })
            
         //debug code
@@ -148,23 +117,6 @@ class Play extends Phaser.Scene {
     }
 
     update(){
-
-        if(!this.gameOver && this.shapes.real === 0){
-            this.add.tween({
-                targets: [this.contText, this.menuText],
-                alpha: {from: 0, to: 1},
-                delay: 1500,
-                duration: 2000,
-            })
-            this.gameOver = true
-        }
-
-        if(this.gameOver && Phaser.Input.Keyboard.JustDown(keyStart)){ //go to next scene
-            clearInterval(this.INTERVAL_ID)
-            this.scene.start('menuScene')
-        }
-       
         this.scoreLeft.text = 'Score: ' + this.p1Tank.points
-        
     }
 }

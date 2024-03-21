@@ -1,6 +1,4 @@
-//Tank prefab
 class Tank extends Phaser.Physics.Arcade.Sprite { 
- 
     constructor(scene, x, y, texture, frame){
         super(scene, x, y, texture, frame)
 
@@ -19,10 +17,4 @@ class Tank extends Phaser.Physics.Arcade.Sprite {
         
         this.moveDirection = new Phaser.Math.Vector2(0, 0)
     }
- 
-    //phaser update method tap-in
-    update(){}
-
-    
-   
 }

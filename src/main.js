@@ -21,7 +21,7 @@ let config = {
             }
         }
     }, 
-    scene: [Menu, Settings, First, Second, Third, Play]
+    scene: [Menu, Credits, Writer, First, Second, Third, Play]
 }
 
 //phaser init
@@ -32,5 +32,8 @@ let borderUISize = game.config.height / 15 //32
 let borderPadding = borderUISize / 3 //10.667
 
 //keybindings
-let keyNext, keyStart, keySettings, cursors
+let keyNext, keyStart, keyBegin, keyCredits, cursors
+
+//needed for one of the scenes
+var INTERVAL_ID
 

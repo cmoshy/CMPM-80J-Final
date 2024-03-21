@@ -1,13 +1,121 @@
 [
 	[
 		{
-			"dialog" : "Tell me, O muse, of that ingenious hero who travelled far and wide after he had sacked the famous town of Troy."
+			"dialog" : "Hello, and thanks for joining me today. I hope you're well."
 		},
 		{
-			"dialog" : "hey there I like icecream"
+			"dialog" : "This is an interactive visual essay focused on understanding how players will interact with your game, and how to evoke agency and immersion from them."
 		},
 		{
-			"dialog" : "Me too!"
+			"dialog" : "As a game developer, your objective is to build a product that is enjoyable by others. One of the most important components of constructing an enjoyable game is making sure the player's experience is first and foremost fun."
+		},
+		{
+			"dialog" : "However, making a game ‘fun’ and making a game work are two different things."
+		},
+		{
+			"dialog": "Take a moment and look at the screen behind you. You might notice a star among the sea of triangles."
+		},
+		{
+			"dialog" : " This star represents a way to interact with this video game, You can press [space] if you want to, and randomly change the direction of it"
+		},
+		{
+			"dialog" : "Right now, you are interacting with the game in a very one dimensional way. You have no control over what to interact with, and only have the ability to aimlessly navigate the sea of polygons.You have no agency."
+		},
+		{
+			"dialog" :"You could argue that this particular iteration of the game is much more like a simulation than a game. Time is a constant, and there is no real control of the game, besides an input that just scrambles the game further."
+		},
+		{
+			"dialog" :"What is the goal here? Can you win? Can you lose? Is there a score? Should the player be trying to avoid the triangles? Nothing is clear, and it's thanks to the games lack of depth. "
+		},
+		{
+			"dialog" :"Nevertheless, it works..."
+		},
+		{
+			"dialog" :"But how do we make it more fun? We need two things: Agency and Immersion."
+		},
+		{
+			"dialog" :"In order to get these, we must follow somewhat of an algorithm. First, we must give the player some agency. The best way to do this is to give them a metric of accomplishment, helping them to find purpose and reason in the game."
+		}	
+    ],
+	[
+		{
+			"dialog" : "Creating a metric of accomplishment should be a process that is understood in two ways. First, you should look at your game's gratification cycle. How frequently does your game reward the player?"			
+		},
+		{
+			"dialog" : "A game like this, is designed to have rapid gratification cycles where each collision has some unique mechanic that draws in the player. So, this game will tie its main metric of accomplishment to the rapid reward cycle."
+		},
+		{
+			"dialog" : "This is done by adding a score text on the top of the screen, and a slight shake upon collision with any of the polygons. "
+		},
+		{
+			"dialog" : "The key with this metric of accomplishment is that it's subtle, because it's ever present. If we had an explosive, flashing, neon score text in the top, it would eventually become overwhelming."
+		},
+		{
+			"dialog" : "However, it's important to note that metrics of accomplishment can and do vary based on the game and subsequently its audience."
+		},
+		{
+			"dialog" : "So, we have added a metric of accomplishment. This is hopefully beginning to give the player some agency. They can move around and collect the triangles, gaining score."
+		},
+		{
+			"dialog" : "Yet there is still something missing. The player still doesn't have enough control over the game, so they still lack the totality of agency that could be offered. Let's fix that."
 		}
-    ]
+	],
+	[
+		{
+			"dialog" : "We have now given the player movement. This is another crucial step in developing their agency in the game. Go ahead and try... use the arrow keys to change direction, and space for a boost!"
+		},
+		{
+			"dialog" : "Giving control in the environment allows more decision making about how the game will play, which in turn increases agency."
+		},
+		{
+			"dialog" : "Things are starting to feel good now. The player has control over how they interact with their environment, and they have a set metric of accomplishment to achieve."
+		},
+		{
+			"dialog" : "The point could be made that there is enough agency now in the game, but it still lacks immersion. That is the next step of the algorithm proposed earlier."
+		},
+		{
+			"dialog" : "We now want to use this agency we have created for the player to make the environment more immersive. The easiest way to do this is to begin to ‘tune’ the game."
+		},
+		{
+			"dialog" : "Tuning the game is done by tweaking small parts, or changing values. The goal of doing this is to both introduce new mechanics and adjust other ones to reshape the structure of the game." 
+		},
+		{
+			"dialog": "This is done with an objective of providing something that is more demanding from the player, while still being relaxed enough to be immersive."
+		},
+		{
+			"dialog" : "When tuning a game, I prefer to approach the concept in a similar way to the metric of accomplishment. First, examine the game's state and understand its reward cycle. Then, begin to mess around with the cycle."
+		},
+		{
+			"dialog" : "Can you change how the game behaves while still maintaining a reward cycle that aligns with the games main metric of accomplishment?"
+		}
+	],
+	[
+		{
+			"dialog" : "This is the game after tuning. We have slowed down the velocity of all the triangles, and changed how the player interacts with them." 
+		},
+		{
+			"dialog" : "This has been done by introducing a new mechanic that dictates what color triangle the player can collect in order to increase their score."
+		},
+		{
+			"dialog" : "This adds an aspect of challenge to the game, which is the final step in creating immersion for the player."
+		},
+		{
+			"dialog" : "However, there is a key to creating this challenge. You must keep it in line with any existing accomplishment metrics. "
+		},
+		{
+			"dialog" : "If the challenge outweighs the accomplishment metrics by too much, or for too long, the player will begin to lose the precious agency we worked so hard to create. "
+		},
+		{
+			"dialog" : "So we add a challenge here by not increasing the score if the player collides with the wrong color. In addition, we move our screen shake to these collisions to represent a mistake."
+		},
+		{
+			"dialog" : "It's important to note that we don't take any score away though. This is because the game's core mechanic cycle can be so rapid at times that deducting points for failing would be far too punishing, outweighing the reward cycle."
+		},
+		{
+			"dialog" : "And there we have it. We have taken a game that works, and given the player agency which we then use to tune the game and evoke immersion and make it fun!"
+		},
+		{
+			"dialog" : "I hope you enjoyed understanding my creative process and maybe you will use it when making games yourself. Thank you!"
+		}
+	]
 ]

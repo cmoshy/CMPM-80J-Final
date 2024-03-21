@@ -15,7 +15,6 @@ class Menu extends Phaser.Scene{
 
     preload() {
         this.load.path = './assets/img/'
-        this.load.image('bullet', 'bullet.png')
         this.load.image('star', 'star.png')
         this.load.image('triangle-1', 'triangle-1.png')
         this.load.image('triangle-2', 'triangle-2.png')
@@ -40,25 +39,28 @@ class Menu extends Phaser.Scene{
 
     }
     
-    create(difficulty){
+    create(){
         menuConfig.color = '#00FF00'
-        this.add.text(game.config.width/2, game.config.height/2 - borderUISize - borderPadding, 'Space', menuConfig).setOrigin(0.5)
-        this.add.text(game.config.width/2, game.config.height/2, 'Press (Z) for settings', menuConfig).setOrigin(0.5)
-        this.add.text(game.config.width/2, game.config.height/2 + borderUISize + borderPadding, 'Press (X) to start', menuConfig).setOrigin(0.5)
-        
-        keySettings = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.Z)
-        keyStart = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.X)
 
-        this.difficulty = difficulty
+        this.add.bitmapText(game.config.width/2, game.config.height/2, 'lemon-milk', 'Building Games that Attract Players', 24).setOrigin(0.5)
+        this.add.bitmapText(game.config.width/2, game.config.height/2+ 50, 'lemon-milk', 'examining the use of agency and immersion to create games and products that excite', 12).setOrigin(0.5)
+        this.add.bitmapText(game.config.width/2, game.config.height/2 + 150, 'lemon-milk', 'Press (Z) to begin', 16).setOrigin(0.5)
+        this.add.bitmapText(game.config.width/2, game.config.height/2 + 175, 'lemon-milk', 'Press (C) for credits', 16).setOrigin(0.5)
+      
+  
+        keyBegin = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.Z)
+        keyCredits = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.C)
     }
 
     update(){
-        if(Phaser.Input.Keyboard.JustDown(keySettings)){
-            this.scene.start('settingsScene')
+        if(Phaser.Input.Keyboard.JustDown(keyCredits)){
+            this.scene.start('creditsScene')
         }
-        if(Phaser.Input.Keyboard.JustDown(keyStart)){
+        if(Phaser.Input.Keyboard.JustDown(keyBegin)){
             console.log('here')
-            this.scene.start('firstScene', this.difficulty)
+            this.scene.start('firstScene')
+            this.scene.launch('writerScene')
+            this.scene.bringToTop('writerScene')
         }
     }
 }

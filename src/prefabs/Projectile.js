@@ -2,12 +2,10 @@ class Projectile extends Phaser.Physics.Arcade.Sprite{
     constructor(scene, x, y, texture, frame, _vlower=50, _vupper=100){
         super(scene, x, y, texture, frame)
 
-        //when an obj is created, put into scene
         scene.add.existing(this)
         scene.physics.add.existing(this)
         scene.events.on('update', this.update, this)
         
-        //collides
         this.setBounce(1)
         this.setCollideWorldBounds(true)
         
@@ -32,7 +30,4 @@ class Projectile extends Phaser.Physics.Arcade.Sprite{
         this.setVelocity(vec.x * Phaser.Math.Between(this.lowerBound, this.upperBound), vec.y * Phaser.Math.Between(this.lowerBound, this.upperBound))
         this.setAngularVelocity(Phaser.Math.Between(this.lowerBound-50,this.upperBound-75))
     }
-
-    update(){}
-  
 }
