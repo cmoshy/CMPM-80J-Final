@@ -16,7 +16,7 @@
 			"dialog": "Take a moment and look at the screen behind you. You might notice a star among the sea of triangles."
 		},
 		{
-			"dialog" : " This star represents a way to interact with this video game, You can press [space] if you want to, and randomly change the direction of it"
+			"dialog" : " This star represents a way to interact with this video game, You can press [space] if you want to, and randomly change the direction of it."
 		},
 		{
 			"dialog" : "Right now, you are interacting with the game in a very one dimensional way. You have no control over what to interact with, and only have the ability to aimlessly navigate the sea of polygons. You have no agency."
@@ -112,7 +112,7 @@
 			"dialog" : "It's important to note that we don't take any score away though. This is because the game's core mechanic cycle can be so rapid at times that deducting points for failing would be far too punishing, outweighing the reward cycle."
 		},
 		{
-			"dialog" : "And there we have it. We have taken a game that works, and given the player agency which we then use to tune the game and evoke immersion and make it fun!"
+			"dialog" : "And there we have it. We have taken a game that works, and given the player agency which we then use to tune the game, evoke immersion and make it fun!"
 		},
 		{
 			"dialog" : "I hope you enjoyed understanding my creative process and maybe you will use it when making games yourself. Thank you!"

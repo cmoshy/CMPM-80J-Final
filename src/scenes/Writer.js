@@ -18,7 +18,7 @@ class Writer extends Phaser.Scene{
         this.NEXT_X = game.config.width/2 + (game.config.width/4) + 50	    // next text prompt x-position
         this.NEXT_Y = game.config.height/2 + 190				    // next text prompt y-position
  
-        this.LETTER_TIMER = 15	    // # ms each letter takes to "type" onscreen
+        this.LETTER_TIMER = 15   // # ms each letter takes to "type" onscreen
  
         // dialog variables
         this.dialogConvo = 0			// current "conversation"
